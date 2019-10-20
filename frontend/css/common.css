@@ -1,0 +1,174 @@
+html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    background-image: url(../img/bg03.png);
+    background-size: 38%;
+    background-repeat: repeat;
+}
+
+._height {
+    height: 100vh;
+}
+
+#inkWrapper,
+#inkBlockWrapper {
+    position: absolute;
+    overflow-x: hidden;
+    top: 0;
+    left: 0;
+    width: 100vw;
+}
+
+#inkWrapper>.ink {
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+#wrapper {
+    overflow-x: hidden;
+    position: relative;
+    width: 100vw;
+}
+
+.logoMain {
+    z-index: 2;
+    position: absolute;
+    transform: translate(-50%, 0%);
+    left: 50%;
+    width: 100%;
+}
+
+.logoMain#logoTop {
+    top: 1%;
+    left: 50%;
+}
+
+.logoMain>#logoTopImg {
+    position: absolute;
+    width: 105%;
+    transform: translate(-50%, -0%);
+    left: 51%;
+}
+
+.logoMain#logoBottom {
+    padding-bottom: 46%;
+    bottom: 0%;
+    left: 50%;
+}
+
+.logoMain>#logoBottomImg {
+    position: absolute;
+    transform: translate(-50%, -0%);
+    width: 108%;
+    left: 45%;
+}
+
+#uploadBtn,
+#submitInput {
+    display: none;
+}
+
+#btnWrapper {
+    z-index: 0;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 48%;
+    left: 50%;
+    display: block;
+    padding: 20px;
+    width: calc(30% + 0.4vh);
+}
+
+#btnWrapper>#btnBg {
+    z-index: -1;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    display: block;
+    width: 150%;
+}
+
+#btnWrapper>#btnText {
+    z-index: 0;
+    position: absolute;
+    transform: translate(-50%, -100%);
+    top: -2%;
+    left: 50%;
+    display: block;
+    width: 100%;
+}
+
+#btnWrapper>#btnArrows {
+    z-index: 0;
+    position: absolute;
+    transform: translate(100%, 0%);
+    top: -5%;
+    right: 3%;
+    display: block;
+    width: 18%;
+}
+
+#btnWrapper>#btnCamera {
+    z-index: 1;
+    display: block;
+    width: 100%;
+}
+
+
+
+#uploadView {
+    z-index: 2;
+    display: none;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 48%;
+    left: 50%;
+    padding: 20px 40px;
+    width: 60%;
+
+    background-color: #000;
+    border-radius: 10px;
+}
+
+#uploadView>#uploadImg {
+    width: 100%;
+    border-radius: 5px;
+}
+
+#uploadView p {
+    text-align: center;
+    margin: 10px 0;
+    color: #fff;
+}
+
+#uploadView span {
+    display: inline-block;
+}
+
+._flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.choiceBtn {
+    color: #fff;
+    padding: 8px;
+    background: #ccc;
+    border-radius: 5px;
+}
+
+.choiceBtn#submitBtn {
+    background: #ED7700;
+}
+
+.choiceBtn#cancelBtn {
+    background: #333;
+}

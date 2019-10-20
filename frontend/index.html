@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>HYPER BUNKASAI</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/window-size.css">
+    <!-- <link rel="stylesheet" href="css/svg_anim.css"> -->
+</head>
+
+<body>
+    <div id="inkWrapper" class="_height">
+        <!-- ink_l -->
+        <img src="img/ink/ink_l06.svg" id="" class="ink" style="width:34%; top:80%; left:37%;">
+        <img src="img/ink/ink_s08.svg" id="" class="ink" style="width:32%; top:74%; left:18%;">
+        <img src="img/ink/ink_l05.svg" id="" class="ink" style="width:44%; top:91%; left:20%;">
+        <img src="img/ink/ink_l04.svg" id="" class="ink" style="width:44%; top:77%; left:82%;">
+        <img src="img/ink/ink_l03.svg" id="" class="ink" style="width:48%; top:14%; left:12%;">
+        <img src="img/ink/ink_l02.svg" id="" class="ink" style="width:40%; top:16%; left:72%;">
+        <img src="img/ink/ink_l01.svg" id="" class="ink animSample" style="width:53%; top: 7%; left:93%;">
+        <!-- ink_s -->
+        <img src="img/ink/ink_s01.svg" id="" class="ink" style="width:14%; top:15%; left:92%;">
+        <img src="img/ink/ink_s02.svg" id="" class="ink" style="width:42%; top:16%; left:48%;">
+        <img src="img/ink/ink_s03.svg" id="" class="ink" style="width: 6%; top:88%; left:44%;">
+        <img src="img/ink/ink_s04.svg" id="" class="ink" style="width:14%; top:15%; left:92%;">
+        <img src="img/ink/ink_s05.svg" id="" class="ink" style="width:28%; top:83%; left:25%;">
+        <img src="img/ink/ink_s06.svg" id="" class="ink" style="width:18%; top:28%; left:92%;">
+        <img src="img/ink/ink_s07.svg" id="" class="ink" style="width:32%; top: 6%; left:32%;">
+        <img src="img/ink/ink_s09.svg" id="" class="ink" style="width:18%; top:89%; left:61%;">
+        <img src="img/ink/ink_s10.svg" id="" class="ink" style="width:18%; top:95%; left:85%;">
+        <img src="img/ink/ink_s11.svg" id="" class="ink" style="width:23%; top:49%; left:94%;">
+        <img src="img/ink/ink_s12.svg" id="" class="ink" style="width:36%; top:26%; left:18%;">
+        <img src="img/ink/ink_s13.svg" id="" class="ink" style="width:30%; top:48%; left: 5%;">
+    </div>
+    <div id="inkBlockWrapper" class="_height"></div>
+
+    <div id="wrapper" class="_height">
+        <div id="logoTop" class="logoMain">
+            <img src="img/logo_top01.svg" id="logoTopImg" alt="">
+        </div>
+
+        <form action="upload_sample.php" method="post">
+            <input type="file" name="upfile" size="30" value="" id="uploadBtn" />
+
+            <label for="uploadBtn" id="btnWrapper">
+                <img src="img/btn_bg01.svg" id="btnBg" alt="">
+                <img src="img/btn_text01.svg" id="btnText" alt="">
+                <img src="img/btn_arrows01.svg" id="btnArrows" alt="">
+                <img src="img/btn_camera01.svg" id="btnCamera" alt="">
+            </label>
+            <div id="uploadView">
+                <img id="uploadImg" src="">
+                <p><span>この画像を</span><span>アップロードしますか？</span></p>
+                <input type="submit" name="save" value="UPLOAD" id="submitInput" />
+                <div class="_flex">
+                    <label for="submitInput" id="submitBtn" class="choiceBtn">UPLOAD</label>
+                    <label for="cancel" id="cancelBtn" class="choiceBtn">CANCEL</label>
+                </div>
+            </div>
+        </form>
+
+        <div id="logoBottom" class="logoMain">
+            <img src="img/logo_bottom01.svg" id="logoBottomImg" alt="">
+        </div>
+    </div>
+    <script>
+        $('#uploadBtn').change(function () {
+            if (this.files.length > 0) {
+                // 選択されたファイル情報を取得
+                file = this.files[0];
+
+                // readerのresultプロパティに、データURLとしてエンコードされたファイルデータを格納
+                var reader = new FileReader();
+                reader.readAsDataURL(file);
+                console.log(file);
+
+                reader.onload = function () {
+                    $('#uploadImg').attr('src', reader.result);
+                }
+            }
+        });
+        $('#uploadBtn').change(function () {
+            $('#uploadView').css({
+                'display': 'block'
+            });
+        });
+        $('#cancelBtn').on('click', function () {
+            console.log(file);
+            $('#uploadView').css({
+                'display': 'none'
+            });
+        });
+    </script>
+    <script>
+        // スマートフォンで全画面表示
+        $(document).ready(function () {
+            var hSize = $(window).height();
+            $('._height').height(hSize); // アドレスバーを除いたサイズを付与
+        });
+        $(window).resize(function () { // ページをリサイズした時の処理
+            var hSize = $(window).height();
+            $('._height').height(hSize); // アドレスバーを除いたサイズを付与
+        });
+    </script>
+</body>
+
+</html>

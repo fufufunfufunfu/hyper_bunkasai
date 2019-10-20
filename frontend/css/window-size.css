@@ -1,0 +1,48 @@
+@media screen and (min-width: 480px) {
+    #btnWrapper {
+        z-index: 2;
+        top: 45%;
+    }
+
+    .logoMain {
+        z-index: 1;
+        position: fixed;
+        transform: translate(0%, 0%);
+        width: 100%;
+    }
+
+    .logoMain>#logoTopImg,
+    .logoMain>#logoBottomImg {
+        position: relative;
+        transform: translate(0%, 0%);
+        left: 0;
+    }
+
+    .logoMain#logoTop {
+        top: 0%;
+        left: 0%;
+        width: 54%;
+    }
+
+    .logoMain>#logoTopImg {
+        width: 100%;
+    }
+
+    .logoMain#logoBottom {
+        padding-bottom: 0%;
+        bottom: -2%;
+        left: auto;
+        right: 0%;
+        width: 50%;
+    }
+
+    .logoMain>#logoBottomImg {
+        width: 100%;
+    }
+}
+
+@media screen and (max-height: 480px) {
+    #btnWrapper {
+        max-width: 100px;
+    }
+}
