@@ -6,7 +6,7 @@
 @keyframes paintAnim {
     0% {
         opacity: 0.3;
-        /* width: 48%; */
+        width: 48%;
     }
 
     10% {
