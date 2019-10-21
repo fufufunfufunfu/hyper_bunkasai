@@ -1,0 +1,14 @@
+version: '3'
+services:
+  frontend:
+    container_name: frontend
+    image: php:7.0-apache
+    ports:
+      - 80:80
+    volumes:
+      - ./frontend:/var/www/html
+  node:
+    container_name: backend
+    build: ./backend
+    ports:
+      - 3000:8080
