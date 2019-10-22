@@ -30,12 +30,16 @@ $('#uploadBtn').change(function () {
             console.log('img_height = ' + img_height);
 
             if ((img_width - img_height) >= 1) {
-                $('#uploadImgFrame').css("width", "100%");
-                $('#uploadImgFrame').css("height", "auto");
+                $('#uploadImgFrame').css({
+                    "width": "100%",
+                    'height': 'auto'
+                });
                 console.log(img_width - img_height);
             } else {
-                $('#uploadImgFrame').css("width", "auto");
-                $('#uploadImgFrame').css("height", "100%");
+                $('#uploadImgFrame').css({
+                    "width": "auto",
+                    "height": "100%"
+                });
                 console.log(img_width - img_height);
             }
         });
