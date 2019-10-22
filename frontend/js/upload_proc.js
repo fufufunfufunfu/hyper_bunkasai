@@ -12,40 +12,40 @@ $('#uploadBtn').change(function () {
             $('#uploadImg').attr('src', reader.result);
         }
     }
+    // 後処理
+    setTimeout(function () {
+
+        $('#viewWrapper').css({
+            'display': 'block',
+            'opacity': '1.0'
+        });
+
+        console.log('image was changed.');
+        $('#uploadImg').each(function () {
+            var upImg = document.getElementById('uploadImg');
+            var img_width = upImg.clientWidth;
+            var img_height = upImg.clientHeight;
+
+            console.log('img_width = ' + img_width);
+            console.log('img_height = ' + img_height);
+
+            if ((img_width - img_height) >= 1) {
+                $('#uploadImgFrame').css("width", "100%");
+                $('#uploadImgFrame').css("height", "auto");
+                console.log(img_width - img_height);
+            } else {
+                $('#uploadImgFrame').css("width", "auto");
+                $('#uploadImgFrame').css("height", "100%");
+                console.log(img_width - img_height);
+            }
+        });
+    }, 500);
 });
 
-$('#uploadBtn').change(function () {
-    $('#viewWrapper').css({
-        'display': 'block',
-        'opacity': '1.0'
-    });
-    imgChanged();
-});
+
 $('#cancelBtn').on('click', function () {
-    console.log(file);
     $('#viewWrapper').css({
         'display': 'none',
         'opacity': '0.0'
     });
 });
-
-function imgChanged() {
-    console.log('image was changed.');
-    $('#uploadImgFrame').css({
-        'background-color': '#000'
-    });
-    $('#uploadImg').each(function () {
-        var upImg = document.getElementById('uploadImg');
-        var img_width = upImg.clientWidth;
-        var img_height = upImg.clientHeight;
-
-        console.log(img_width);
-        console.log(img_height);
-
-        if ((img_width / img_height) >= 1) {
-            $('#uploadImgFrame').css("height", "auto");
-        } else {
-            $('#uploadImgFrame').css("height", "100%");
-        }
-    });
-};
