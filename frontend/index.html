@@ -62,9 +62,7 @@
         <div id="viewWrapper">
             <div id="uploadView">
                 <div id="uploadImgCont">
-                    <div id="uploadImgFrame">
-                        <img id="uploadImg" src="">
-                    </div>
+                    <img id="uploadImg" src="">
                 </div>
                 <p><span>この画像を</span><span>アップロードしますか？</span></p>
                 <input type="submit" name="save" value="UPLOAD" id="submitInput" />
@@ -76,36 +74,9 @@
         </div>
 
     </div>
-    <script>
-        $('#uploadBtn').change(function () {
-            if (this.files.length > 0) {
-                // 選択されたファイル情報を取得
-                file = this.files[0];
 
-                // readerのresultプロパティに、データURLとしてエンコードされたファイルデータを格納
-                var reader = new FileReader();
-                reader.readAsDataURL(file);
-                console.log(file);
+    <script type="text/javascript" src="js/upload_proc.js"></script>
 
-                reader.onload = function () {
-                    $('#uploadImg').attr('src', reader.result);
-                }
-            }
-        });
-        $('#uploadBtn').change(function () {
-            $('#viewWrapper').css({
-                'display': 'block',
-                'opacity': '1.0'
-            });
-        });
-        $('#cancelBtn').on('click', function () {
-            console.log(file);
-            $('#viewWrapper').css({
-                'display': 'none',
-                'opacity': '0.0'
-            });
-        });
-    </script>
     <script>
         // スマートフォンで全画面表示
         $(document).ready(function () {
@@ -117,6 +88,7 @@
             $('._height').height(hSize); // アドレスバーを除いたサイズを付与
         });
     </script>
+
 </body>
 
 </html>
