@@ -159,8 +159,8 @@ body {
 
 #uploadImgFrame {
     position: relative;
-    max-width: calc(100% - (10px *2));
-    max-height: calc(100% - (10px *2));
+    max-width: calc(100% - (0px *2));
+    max-height: calc(100% - (0px *2));
     display: inline-block;
     background-color: aqua;
     width: auto;
