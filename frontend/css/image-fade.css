@@ -1,0 +1,157 @@
+/* #viewWrapper {
+    display: block;
+    opacity: 1.0;
+}
+
+#uploadImgFrame,
+#uploadImg {
+    width: auto;
+    height: 100%;
+} */
+
+
+
+#fadeWrapper {
+    position: absolute;
+    overflow: hidden;
+    bottom: 0;
+    left: 0;
+    width: calc(100% - (10px *2));
+    height: calc(100% - (10px *2));
+    margin: 10px;
+    mix-blend-mode: overlay;
+    mix-blend-mode: screen;
+    /* mix-blend-mode: hard-light; */
+}
+
+#fadeBox {
+    position: absolute;
+    overflow: hidden;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 200%;
+}
+
+._fade {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 500%;
+    height: 1%;
+    margin-top: auto;
+    background: -moz-linear-gradient(top, #FFF, #FFC778 30%, #F89174 60%, #748af8);
+    background: -webkit-linear-gradient(top, #FFF, #FFC778 30%, #F89174 60%, #748af8);
+    background: linear-gradient(to bottom, #FFF, #FFC778 30%, #F89174 60%, #748af8);
+    /* animation: 3.0s ease-in .5s infinite; */
+    animation: 3.0s ease-in .5s infinite alternate;
+}
+
+._fade#_01 {
+    animation-name: mix_01;
+    height: 0%;
+}
+
+@keyframes mix_01 {
+
+    0%,
+    40% {
+        opacity: 0.7;
+        height: 0%;
+    }
+
+    80%,
+    100% {
+        opacity: 1.0;
+        height: 100%;
+    }
+}
+
+._fade#_02 {
+    animation-name: mix_02;
+    height: 5%;
+}
+
+@keyframes mix_02 {
+
+    0%,
+    20% {
+        opacity: 0.7;
+        bottom: 0;
+        background: #748af8;
+    }
+
+    60%,
+    100% {
+        opacity: 1.0;
+        bottom: 100%;
+        background: #FFC778;
+    }
+}
+
+._fade#_03 {
+    animation-name: mix_03;
+    height: 2%;
+}
+
+@keyframes mix_03 {
+
+    0%,
+    0% {
+        opacity: 0.7;
+        bottom: 0;
+        background: #748af8;
+    }
+
+    60%,
+    100% {
+        opacity: 1.0;
+        bottom: 100%;
+        background: #FFC778;
+    }
+}
+
+._fade#_04 {
+    animation-name: mix_04;
+    height: 10%;
+}
+
+@keyframes mix_04 {
+
+    0%,
+    40% {
+        opacity: 0.7;
+        bottom: 0;
+        background: #748af8;
+    }
+
+    100%,
+    100% {
+        opacity: 1.0;
+        bottom: 100%;
+        background: #FFC778;
+    }
+}
+
+._fade#_05 {
+    animation-name: mix_05;
+    height: 10%;
+}
+
+@keyframes mix_05 {
+
+    0%,
+    20% {
+        opacity: 0.7;
+        bottom: 0;
+        background: #748af8;
+    }
+
+    80%,
+    100% {
+        opacity: 1.0;
+        bottom: 100%;
+        background: #FFC778;
+    }
+}
