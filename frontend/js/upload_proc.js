@@ -34,14 +34,23 @@ $('#uploadBtn').change(function () {
                     "width": "100%",
                     'height': 'auto'
                 });
-                console.log(img_width - img_height);
+                $('#uploadImg').css({
+                    "width": "100%",
+                    'height': 'auto'
+                });
+                console.log('width is longer.');
             } else {
                 $('#uploadImgFrame').css({
                     "width": "auto",
                     "height": "100%"
                 });
-                console.log(img_width - img_height);
+                $('#uploadImg').css({
+                    "width": "auto",
+                    "height": "100%"
+                });
+                console.log('height is longer.');
             }
+            console.log(img_width - img_height);
         });
     }, 500);
 });
