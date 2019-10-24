@@ -31,7 +31,7 @@ $('#uploadBtn').change(function () {
 
             if ((img_width - img_height) >= 1) {
                 $('#uploadImgFrame').css({
-                    "width": "100%",
+                    "width": "calc(100% - (10px *2))",
                     'height': 'auto'
                 });
                 $('#uploadImg').css({
@@ -42,7 +42,7 @@ $('#uploadBtn').change(function () {
             } else {
                 $('#uploadImgFrame').css({
                     "width": "auto",
-                    "height": "100%"
+                    "height": "calc(100% - (10px *2))"
                 });
                 $('#uploadImg').css({
                     "width": "auto",
