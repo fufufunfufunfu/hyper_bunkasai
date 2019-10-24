@@ -1,0 +1,183 @@
+/* #viewWrapper {
+    display: block;
+    opacity: 1.0;
+}
+
+#uploadImgFrame,
+#uploadImg {
+    width: auto;
+    height: 100%;
+} */
+
+:root {
+    --grad01: #fff;
+    --grad02: #000;
+}
+
+
+#fadeWrapper {
+    position: absolute;
+    overflow: hidden;
+    transform: translate(-50%, 50%);
+    bottom: 50%;
+    left: 50%;
+    width: calc(100% - (10px *2));
+    height: calc(100% - (10px *2));
+    /* padding: 10px; */
+    /* background-color: black; */
+    /* mix-blend-mode: screen; */
+    /* mix-blend-mode: hard-light; */
+    /* mix-blend-mode: overlay; */
+    mix-blend-mode: lighten;
+    opacity: 1.0;
+}
+
+#fadeCont {
+    position: absolute;
+    overflow: hidden;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 200%;
+}
+
+._fade {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 1000%;
+    height: 1000%;
+    margin-top: auto;
+    background: -moz-linear-gradient(var(--grad01), var(--grad02));
+    background: -webkit-linear-gradient(var(--grad01), var(--grad02));
+    background: linear-gradient(var(--grad01), var(--grad02));
+    /* animation: 3.0s ease-in .5s infinite; */
+    animation: 2.0s ease-in .5s normal forwards;
+}
+
+#fadeCont._c00 ._fade {
+    background: -moz-linear-gradient(top, #FFF, #FFC778 30%, #F89174 60%, #748af8);
+    background: -webkit-linear-gradient(top, #FFF, #FFC778 30%, #F89174 60%, #748af8);
+    background: linear-gradient(to bottom, #FFF, #FFC778 30%, #F89174 60%, #748af8);
+}
+
+#fadeCont._c01 ._fade {
+    --grad01: #f4d444;
+    --grad02: #748af8;
+}
+
+#fadeCont._c02 ._fade {
+    --grad01: #b30d6f;
+    --grad02: #2e3192;
+}
+
+
+
+._fade#_01 {
+    animation-name: mix_01;
+    height: 0%;
+}
+
+@keyframes mix_01 {
+
+    0%,
+    40% {
+        opacity: 0.7;
+        height: 0%;
+    }
+
+    80%,
+    100% {
+        opacity: 1.0;
+        height: 100%;
+    }
+}
+
+._fade#_02 {
+    animation-name: mix_02;
+    height: 5%;
+}
+
+@keyframes mix_02 {
+
+    0%,
+    20% {
+        opacity: 0.7;
+        bottom: 0;
+        background: var(--grad01);
+    }
+
+    60%,
+    100% {
+        opacity: 1.0;
+        bottom: 100%;
+        background: var(--grad02);
+    }
+}
+
+._fade#_03 {
+    animation-name: mix_03;
+    height: 2%;
+}
+
+@keyframes mix_03 {
+
+    0%,
+    0% {
+        opacity: 0.7;
+        bottom: 0;
+        background: var(--grad01);
+    }
+
+    60%,
+    100% {
+        opacity: 1.0;
+        bottom: 100%;
+        background: var(--grad02);
+    }
+}
+
+._fade#_04 {
+    animation-name: mix_04;
+    height: 10%;
+}
+
+@keyframes mix_04 {
+
+    0%,
+    40% {
+        opacity: 0.7;
+        bottom: 0;
+        background: var(--grad01);
+    }
+
+    100%,
+    100% {
+        opacity: 1.0;
+        bottom: 100%;
+        background: var(--grad02);
+    }
+}
+
+._fade#_05 {
+    animation-name: mix_05;
+    height: 10%;
+}
+
+@keyframes mix_05 {
+
+    0%,
+    20% {
+        opacity: 0.7;
+        bottom: 0;
+        background: var(--grad01);
+    }
+
+    80%,
+    100% {
+        opacity: 1.0;
+        bottom: 100%;
+        background: var(--grad02);
+    }
+}

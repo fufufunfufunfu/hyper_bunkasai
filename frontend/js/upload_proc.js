@@ -31,17 +31,26 @@ $('#uploadBtn').change(function () {
 
             if ((img_width - img_height) >= 1) {
                 $('#uploadImgFrame').css({
+                    "width": "calc(100% - (10px *2))",
+                    'height': 'auto'
+                });
+                $('#uploadImg').css({
                     "width": "100%",
                     'height': 'auto'
                 });
-                console.log(img_width - img_height);
+                console.log('width is longer.');
             } else {
                 $('#uploadImgFrame').css({
                     "width": "auto",
+                    "height": "calc(100% - (10px *2))"
+                });
+                $('#uploadImg').css({
+                    "width": "auto",
                     "height": "100%"
                 });
-                console.log(img_width - img_height);
+                console.log('height is longer.');
             }
+            console.log(img_width - img_height);
         });
     }, 500);
 });
