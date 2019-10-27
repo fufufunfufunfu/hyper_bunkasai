@@ -11,7 +11,36 @@
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/window-size.css">
     <link rel="stylesheet" href="css/image-fade.css">
-    <!-- <link rel="stylesheet" href="css/svg_anim.css"> -->
+    <script>
+        (function (d) {
+            var config = {
+                    kitId: 'ayn0cwk',
+                    scriptTimeout: 3000,
+                    async: true
+                },
+                h = d.documentElement,
+                t = setTimeout(function () {
+                    h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive";
+                }, config.scriptTimeout),
+                tk = d.createElement("script"),
+                f = false,
+                s = d.getElementsByTagName("script")[0],
+                a;
+            h.className += " wf-loading";
+            tk.src = 'https://use.typekit.net/' + config.kitId + '.js';
+            tk.async = true;
+            tk.onload = tk.onreadystatechange = function () {
+                a = this.readyState;
+                if (f || a && a != "complete" && a != "loaded") return;
+                f = true;
+                clearTimeout(t);
+                try {
+                    Typekit.load(config)
+                } catch (e) {}
+            };
+            s.parentNode.insertBefore(tk, s)
+        })(document);
+    </script>
 </head>
 
 <body>
@@ -66,8 +95,8 @@
                     <div id="uploadImgFrame">
                         <img id="uploadImg" src="">
                         <!-- <img id="uploadImg" src="img/sample.jpg"> -->
-                        <div id="fadeWrapper">
-                            <div id="fadeCont" class="_c02">
+                        <div id="fadeWrapper" class="_c01">
+                            <div id="fadeCont">
                                 <div id="_01" class="_fade"></div>
                                 <div id="_02" class="_fade"></div>
                                 <div id="_03" class="_fade"></div>
@@ -77,11 +106,12 @@
                         </div>
                     </div>
                 </div>
+                <div id="uploadLine" class="sectionLine"></div>
                 <p><span>この画像を</span><span>アップロードしますか？</span></p>
                 <input type="submit" name="save" value="UPLOAD" id="submitInput" />
-                <div class="_flex">
-                    <label for="submitInput" id="submitBtn" class="choiceBtn">UPLOAD</label>
-                    <label for="cancel" id="cancelBtn" class="choiceBtn">CANCEL</label>
+                <div id="submitWrapper">
+                    <label for="submitInput" id="submitBtn">UPLOAD</label>
+                    <label for="cancel" id="cancelBtn">CANCEL</label>
                 </div>
             </div>
         </div>
