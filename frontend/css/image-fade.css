@@ -18,18 +18,13 @@
 #fadeWrapper {
     position: absolute;
     overflow: hidden;
-    transform: translate(-50%, 50%);
-    bottom: 50%;
-    left: 50%;
-    width: calc(100% - (10px *2));
-    height: calc(100% - (10px *2));
-    /* padding: 10px; */
-    /* background-color: black; */
-    /* mix-blend-mode: screen; */
-    /* mix-blend-mode: hard-light; */
-    /* mix-blend-mode: overlay; */
-    mix-blend-mode: lighten;
+    top: calc(0% + var(--framePadding));
+    left: calc(0% + var(--framePadding));
+    width: var(--inneSizeAbsolute);
+    height: var(--inneSizeAbsolute);
     opacity: 1.0;
+    mix-blend-mode: lighten;
+    background-color: #000;
 }
 
 #fadeCont {
@@ -39,7 +34,7 @@
     top: 50%;
     left: 50%;
     width: 300%;
-    height: 200%;
+    height: 400%;
 }
 
 ._fade {
@@ -52,24 +47,42 @@
     background: -moz-linear-gradient(var(--grad01), var(--grad02));
     background: -webkit-linear-gradient(var(--grad01), var(--grad02));
     background: linear-gradient(var(--grad01), var(--grad02));
-    /* animation: 3.0s ease-in .5s infinite; */
-    animation: 2.0s ease-in .5s normal forwards;
+    /* animation: 2.0s ease-in .5s normal forwards; */
+    animation: 2.0s ease-in .5s infinite;
+    mix-blend-mode: screen;
+    /* mix-blend-mode: hard-light; */
+    /* mix-blend-mode: overlay; */
 }
 
-#fadeCont._c00 ._fade {
+#fadeWrapper._c00 ._fade {
     background: -moz-linear-gradient(top, #FFF, #FFC778 30%, #F89174 60%, #748af8);
     background: -webkit-linear-gradient(top, #FFF, #FFC778 30%, #F89174 60%, #748af8);
     background: linear-gradient(to bottom, #FFF, #FFC778 30%, #F89174 60%, #748af8);
 }
 
-#fadeCont._c01 ._fade {
-    --grad01: #f4d444;
-    --grad02: #748af8;
-}
-
-#fadeCont._c02 ._fade {
+#fadeWrapper._c01 {
     --grad01: #b30d6f;
     --grad02: #2e3192;
+}
+
+#fadeWrapper._c02 {
+    --grad01: #2e3192;
+    --grad02: #ff69b4;
+}
+
+#fadeWrapper._c03 {
+    --grad01: #ff69b4;
+    --grad02: #f4d444;
+}
+
+#fadeWrapper._c04 {
+    --grad01: #f4d444;
+    --grad02: #88a80d;
+}
+
+#fadeWrapper._c05 {
+    --grad01: #88a80d;
+    --grad02: #b30d6f;
 }
 
 
@@ -77,6 +90,9 @@
 ._fade#_01 {
     animation-name: mix_01;
     height: 0%;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    mix-blend-mode: lighten;
 }
 
 @keyframes mix_01 {
