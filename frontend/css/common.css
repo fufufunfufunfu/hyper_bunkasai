@@ -1,15 +1,28 @@
+:root {
+    --framePadding: 10px;
+    --innerSize: calc(100% - (var(--framePadding) *2));
+    --inneSizeAbsolute: calc(100% - (var(--framePadding) *2));
+    --frameSize: calc((var(--innerSize) - 20px));
+    --animTimes: 2.0s;
+}
+
 html {
+    font-size: 62.5%;
     margin: 0;
     padding: 0;
 }
 
 body {
-    margin: 0;
-    padding: 0;
     background-color: #000;
     background-image: url(../img/bg03.png);
     background-size: 38%;
     background-repeat: repeat;
+    /* TBカリグラゴシック Std */
+    font-family: tbcgothic-std, sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
 }
 
 ._height {
@@ -135,15 +148,22 @@ body {
 
 #uploadView {
     z-index: 2;
+    overflow: hidden;
     position: absolute;
     transform: translate(-50%, -50%);
     top: 48%;
     left: 50%;
     margin: auto;
-    padding: 20px 20px;
-    width: calc(100% - ((20px) * 2) - 40px);
-    background-color: rgba(255, 255, 255, 0.3);
-    border-radius: 10px;
+    width: calc(100% - 4.0rem);
+    background-color: rgba(255, 105, 180, 1.0);
+    background-color: rgba(229, 50, 140, 1.0);
+    background-color: #e5328c;
+    border-radius: 2.0rem;
+}
+
+#uploadView p {
+    font-size: 2.1rem;
+    line-height: 3.6rem;
 }
 
 #uploadImgCont {
@@ -152,36 +172,89 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    margin: auto;
-    max-width: 100%;
-    height: 320px;
+    margin: 1.0rem auto 1.6rem;
+    width: 26.0rem;
+    height: 24.0rem;
 }
 
 #uploadImgFrame {
     position: relative;
-    max-width: calc(100% - (10px *2));
-    max-height: calc(100% - (10px *2));
+    max-width: calc(var(--innerSize));
+    max-height: calc(var(--innerSize));
     display: inline-block;
-    padding: 10px;
+    padding: var(--framePadding);
     background-color: aqua;
     background-color: #fff;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
     border-radius: 5px;
     width: auto;
+    height: auto;
+    animation: 2.0s ease-in .5s infinite forwards;
+    /* animation: 4.0s ease-in .5s 1 forwards; */
+}
+
+@keyframes animPopImgWidth {
+
+    0%,
+    50% {
+        width: calc(var(--frameSize));
+    }
+
+    52% {
+        width: calc(var(--frameSize) - (var(--innerSize) / 4));
+    }
+
+    56% {
+        width: calc(var(--innerSize));
+    }
+
+    74%,
+    100% {
+        width: calc(var(--frameSize));
+    }
+}
+
+@keyframes animPopImgHeight {
+
+    0%,
+    50% {
+        height: calc(var(--frameSize));
+    }
+
+    52% {
+        height: calc(var(--frameSize) - (var(--innerSize) / 4));
+    }
+
+    56% {
+        height: calc(var(--innerSize));
+    }
+
+    74%,
+    100% {
+        height: calc(var(--frameSize));
+    }
 }
 
 #uploadImg {
     display: block;
-    width: calc(100% - (10px *2));
-    height: calc(100% - (10px *2));
+    width: 100%;
+    height: 100%;
     background-color: #fff;
     border-radius: 5px;
+}
+
+#uploadLine {
+    background-color: #fff;
+    width: 8.0rem;
+    height: 0.3rem;
+    border-radius: calc(0.3rem / 2);
+    margin: 0 auto;
 }
 
 
 #uploadView p {
     text-align: center;
-    margin: 10px 0;
+    margin: 2.4rem 0 4.0rem;
     color: #fff;
 }
 
@@ -189,23 +262,30 @@ body {
     display: inline-block;
 }
 
-._flex {
+#submitWrapper {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    width: 100%;
 }
 
-.choiceBtn {
+#submitWrapper label {
+    display: inline-block;
+    text-align: center;
+    font-size: 2.1rem;
+    letter-spacing: 0.2rem;
+    padding: 2.0rem 0;
+}
+
+#submitWrapper #submitBtn {
+    order: 2;
+    width: 60%;
+    background: #fff;
+    color: #E5328C;
+}
+
+#submitWrapper #cancelBtn {
+    order: 1;
+    width: 40%;
+    background: #88A80D;
     color: #fff;
-    padding: 8px;
-    background: #ccc;
-    border-radius: 5px;
-}
-
-.choiceBtn#submitBtn {
-    background: #ED7700;
-}
-
-.choiceBtn#cancelBtn {
-    background: #333;
 }
