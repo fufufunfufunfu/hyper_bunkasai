@@ -1,4 +1,5 @@
 $('#uploadBtn').change(function () {
+    // fileの読み出し
     if (this.files.length > 0) {
         // 選択されたファイル情報を取得
         file = this.files[0];
@@ -12,6 +13,27 @@ $('#uploadBtn').change(function () {
             $('#uploadImg').attr('src', reader.result);
         }
     }
+
+    // fadeの色をランダムで選択する
+    var fade_random = Math.floor(Math.random() * 5) + 1;
+    console.log('fade is number _0' + fade_random);
+    $('#fadeWrapper').removeClass('_c01 _c02 _c03 _c04 _c05');
+    if (fade_random == 1) {
+        $('#fadeWrapper').addClass('_c01');
+    }
+    if (fade_random == 2) {
+        $('#fadeWrapper').addClass('_c02');
+    }
+    if (fade_random == 3) {
+        $('#fadeWrapper').addClass('_c03');
+    }
+    if (fade_random == 4) {
+        $('#fadeWrapper').addClass('_c04');
+    }
+    if (fade_random == 5) {
+        $('#fadeWrapper').addClass('_c05');
+    }
+
     // 後処理
     setTimeout(function () {
 
@@ -31,22 +53,28 @@ $('#uploadBtn').change(function () {
 
             if ((img_width - img_height) >= 1) {
                 $('#uploadImgFrame').css({
-                    "width": "calc(100% - (10px *2))",
+                    "width": "var(--frameSize)",
                     'height': 'auto'
                 });
                 $('#uploadImg').css({
                     "width": "100%",
                     'height': 'auto'
                 });
+                $('#uploadImgFrame').css({
+                    "animation-name": "animPopImgWidth"
+                });
                 console.log('width is longer.');
             } else {
                 $('#uploadImgFrame').css({
                     "width": "auto",
-                    "height": "calc(100% - (10px *2))"
+                    "height": "var(--frameSize)"
                 });
                 $('#uploadImg').css({
                     "width": "auto",
                     "height": "100%"
+                });
+                $('#uploadImgFrame').css({
+                    "animation-name": "animPopImgHeight"
                 });
                 console.log('height is longer.');
             }
