@@ -1,0 +1,228 @@
+:root {
+    --ink_01w: 34%;
+    --ink_01t: 80%;
+    --ink_01l: 37%;
+    --ink_02w: 32%;
+    --ink_02t: 74%;
+    --ink_02l: 18%;
+    --ink_03w: 44%;
+    --ink_03t: 91%;
+    --ink_03l: 20%;
+    --ink_04w: 44%;
+    --ink_04t: 77%;
+    --ink_04l: 82%;
+    --ink_05w: 48%;
+    --ink_05t: 14%;
+    --ink_05l: 12%;
+    --ink_06w: 40%;
+    --ink_06t: 16%;
+    --ink_06l: 72%;
+    --ink_07w: 53%;
+    --ink_07t: 7%;
+    --ink_07l: 93%;
+    --ink_08w: 14%;
+    --ink_08t: 15%;
+    --ink_08l: 92%;
+    --ink_09w: 42%;
+    --ink_09t: 16%;
+    --ink_09l: 48%;
+    --ink_10w: 6%;
+    --ink_10t: 88%;
+    --ink_10l: 44%;
+    --ink_11w: 14%;
+    --ink_11t: 15%;
+    --ink_11l: 92%;
+    --ink_12w: 28%;
+    --ink_12t: 83%;
+    --ink_12l: 25%;
+    --ink_13w: 18%;
+    --ink_13t: 28%;
+    --ink_13l: 92%;
+    --ink_14w: 32%;
+    --ink_14t: 6%;
+    --ink_14l: 32%;
+    --ink_15w: 18%;
+    --ink_15t: 89%;
+    --ink_15l: 61%;
+    --ink_16w: 18%;
+    --ink_16t: 95%;
+    --ink_16l: 85%;
+    --ink_17w: 23%;
+    --ink_17t: 49%;
+    --ink_17l: 94%;
+    --ink_18w: 36%;
+    --ink_18t: 26%;
+    --ink_18l: 18%;
+    --ink_19w: 30%;
+    --ink_19t: 48%;
+    --ink_19l: 5%;
+}
+
+#inkWrapper,
+#inkBlockWrapper {
+    position: absolute;
+    overflow-x: hidden;
+    top: 0;
+    left: 0;
+    width: 100vw;
+}
+
+.ink {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    animation: ease-in .5s forwards;
+    opacity: 0.0;
+}
+
+
+.ink._01 {
+    width: var(--ink_01w);
+    top: var(--ink_01t);
+    left: var(--ink_01l);
+    animation-name: anim_ink01;
+    animation-delay: .0s;
+}
+
+.ink._02 {
+    width: var(--ink_02w);
+    top: var(--ink_02t);
+    left: var(--ink_02l);
+    animation-name: anim_ink02;
+    animation-delay: .1s;
+}
+
+.ink._03 {
+    width: var(--ink_03w);
+    top: var(--ink_03t);
+    left: var(--ink_03l);
+    animation-name: anim_ink03;
+    animation-delay: .2s;
+}
+
+.ink._04 {
+    width: var(--ink_04w);
+    top: var(--ink_04t);
+    left: var(--ink_04l);
+    animation-name: anim_ink04;
+    animation-delay: .0s;
+}
+
+.ink._05 {
+    width: var(--ink_05w);
+    top: var(--ink_05t);
+    left: var(--ink_05l);
+    animation-name: anim_ink05;
+    animation-delay: .3s;
+}
+
+.ink._06 {
+    width: var(--ink_06w);
+    top: var(--ink_06t);
+    left: var(--ink_06l);
+    animation-name: anim_ink06;
+    animation-delay: .4s;
+}
+
+.ink._07 {
+    width: var(--ink_07w);
+    top: var(--ink_07t);
+    left: var(--ink_07l);
+    animation-name: anim_ink07;
+    animation-delay: .0s;
+}
+
+.ink._08 {
+    width: var(--ink_08w);
+    top: var(--ink_08t);
+    left: var(--ink_08l);
+    animation-name: anim_ink08;
+    animation-delay: .5s;
+}
+
+.ink._09 {
+    width: var(--ink_09w);
+    top: var(--ink_09t);
+    left: var(--ink_09l);
+    animation-name: anim_ink09;
+    animation-delay: .6s;
+}
+
+.ink._10 {
+    width: var(--ink_10w);
+    top: var(--ink_10t);
+    left: var(--ink_10l);
+    animation-name: anim_ink10;
+    animation-delay: .0s;
+}
+
+.ink._11 {
+    width: var(--ink_11w);
+    top: var(--ink_11t);
+    left: var(--ink_11l);
+    animation-name: anim_ink11;
+    animation-delay: .0s;
+}
+
+.ink._12 {
+    width: var(--ink_12w);
+    top: var(--ink_12t);
+    left: var(--ink_12l);
+    animation-name: anim_ink12;
+    animation-delay: .0s;
+}
+
+.ink._13 {
+    width: var(--ink_13w);
+    top: var(--ink_13t);
+    left: var(--ink_13l);
+    animation-name: anim_ink13;
+    animation-delay: .0s;
+}
+
+.ink._14 {
+    width: var(--ink_14w);
+    top: var(--ink_14t);
+    left: var(--ink_14l);
+    animation-name: anim_ink14;
+    animation-delay: .0s;
+}
+
+.ink._15 {
+    width: var(--ink_15w);
+    top: var(--ink_15t);
+    left: var(--ink_15l);
+    animation-name: anim_ink15;
+    animation-delay: .0s;
+}
+
+.ink._16 {
+    width: var(--ink_16w);
+    top: var(--ink_16t);
+    left: var(--ink_16l);
+    animation-name: anim_ink16;
+    animation-delay: .0s;
+}
+
+.ink._17 {
+    width: var(--ink_17w);
+    top: var(--ink_17t);
+    left: var(--ink_17l);
+    animation-name: anim_ink17;
+    animation-delay: .0s;
+}
+
+.ink._18 {
+    width: var(--ink_18w);
+    top: var(--ink_18t);
+    left: var(--ink_18l);
+    animation-name: anim_ink18;
+    animation-delay: .0s;
+}
+
+.ink._19 {
+    width: var(--ink_19w);
+    top: var(--ink_19t);
+    left: var(--ink_19l);
+    animation-name: anim_ink19;
+    animation-delay: .0s;
+}
