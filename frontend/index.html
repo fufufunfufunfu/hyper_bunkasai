@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/window-size.css">
     <link rel="stylesheet" href="css/image-fade.css">
+    <link rel="stylesheet" href="css/ink-property.css">
+    <link rel="stylesheet" href="css/ink-animation.css">
     <script>
         (function (d) {
             var config = {
@@ -46,26 +48,26 @@
 <body>
     <div id="inkWrapper" class="_height">
         <!-- ink_l -->
-        <img src="img/ink/ink_l06.svg" id="" class="ink" style="width:34%; top:80%; left:37%;">
-        <img src="img/ink/ink_s08.svg" id="" class="ink" style="width:32%; top:74%; left:18%;">
-        <img src="img/ink/ink_l05.svg" id="" class="ink" style="width:44%; top:91%; left:20%;">
-        <img src="img/ink/ink_l04.svg" id="" class="ink" style="width:44%; top:77%; left:82%;">
-        <img src="img/ink/ink_l03.svg" id="" class="ink" style="width:48%; top:14%; left:12%;">
-        <img src="img/ink/ink_l02.svg" id="" class="ink" style="width:40%; top:16%; left:72%;">
-        <img src="img/ink/ink_l01.svg" id="" class="ink animSample" style="width:53%; top: 7%; left:93%;">
+        <img src="img/ink/ink_l06.svg" class="ink _01">
+        <img src="img/ink/ink_s08.svg" class="ink _02">
+        <img src="img/ink/ink_l05.svg" class="ink _03">
+        <img src="img/ink/ink_l04.svg" class="ink _04">
+        <img src="img/ink/ink_l03.svg" class="ink _05">
+        <img src="img/ink/ink_l02.svg" class="ink _06">
+        <img src="img/ink/ink_l01.svg" class="ink _07">
         <!-- ink_s -->
-        <img src="img/ink/ink_s01.svg" id="" class="ink" style="width:14%; top:15%; left:92%;">
-        <img src="img/ink/ink_s02.svg" id="" class="ink" style="width:42%; top:16%; left:48%;">
-        <img src="img/ink/ink_s03.svg" id="" class="ink" style="width: 6%; top:88%; left:44%;">
-        <img src="img/ink/ink_s04.svg" id="" class="ink" style="width:14%; top:15%; left:92%;">
-        <img src="img/ink/ink_s05.svg" id="" class="ink" style="width:28%; top:83%; left:25%;">
-        <img src="img/ink/ink_s06.svg" id="" class="ink" style="width:18%; top:28%; left:92%;">
-        <img src="img/ink/ink_s07.svg" id="" class="ink" style="width:32%; top: 6%; left:32%;">
-        <img src="img/ink/ink_s09.svg" id="" class="ink" style="width:18%; top:89%; left:61%;">
-        <img src="img/ink/ink_s10.svg" id="" class="ink" style="width:18%; top:95%; left:85%;">
-        <img src="img/ink/ink_s11.svg" id="" class="ink" style="width:23%; top:49%; left:94%;">
-        <img src="img/ink/ink_s12.svg" id="" class="ink" style="width:36%; top:26%; left:18%;">
-        <img src="img/ink/ink_s13.svg" id="" class="ink" style="width:30%; top:48%; left: 5%;">
+        <img src="img/ink/ink_s01.svg" class="ink _08">
+        <img src="img/ink/ink_s02.svg" class="ink _09">
+        <img src="img/ink/ink_s03.svg" class="ink _10">
+        <img src="img/ink/ink_s04.svg" class="ink _11">
+        <img src="img/ink/ink_s05.svg" class="ink _12">
+        <img src="img/ink/ink_s06.svg" class="ink _13">
+        <img src="img/ink/ink_s07.svg" class="ink _14">
+        <img src="img/ink/ink_s09.svg" class="ink _15">
+        <img src="img/ink/ink_s10.svg" class="ink _16">
+        <img src="img/ink/ink_s11.svg" class="ink _17">
+        <img src="img/ink/ink_s12.svg" class="ink _18">
+        <img src="img/ink/ink_s13.svg" class="ink _19">
     </div>
     <div id="inkBlockWrapper" class="_height"></div>
 
@@ -91,6 +93,10 @@
 
         <div id="viewWrapper">
             <div id="uploadView">
+                <label for="cancel" id="cancelIcon" class="cancelInput">
+                    <div class="cancelCross _01"></div>
+                    <div class="cancelCross _02"></div>
+                </label>
                 <div id="uploadImgCont">
                     <div id="uploadImgFrame">
                         <img id="uploadImg" src="">
@@ -111,7 +117,7 @@
                 <input type="submit" name="save" value="UPLOAD" id="submitInput" />
                 <div id="submitWrapper">
                     <label for="submitInput" id="submitBtn">UPLOAD</label>
-                    <label for="cancel" id="cancelBtn">CANCEL</label>
+                    <label for="cancel" id="cancelBtn" class="cancelInput">CANCEL</label>
                 </div>
             </div>
         </div>
