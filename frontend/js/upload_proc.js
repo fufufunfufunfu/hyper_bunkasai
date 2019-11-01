@@ -84,7 +84,7 @@ $('#uploadBtn').change(function () {
 });
 
 
-$('#cancelBtn').on('click', function () {
+$('.cancelInput').on('click', function () {
     $('#viewWrapper').css({
         'display': 'none',
         'opacity': '0.0'
