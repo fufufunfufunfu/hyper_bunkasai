@@ -155,7 +155,7 @@ body {
     width: calc(100% - 4.0rem);
     background-color: #e5328c;
     border-radius: 0.8rem;
-    transition: .3s;
+    /* transition: 2.4s; */
 }
 
 #uploadView #cancelIcon {
