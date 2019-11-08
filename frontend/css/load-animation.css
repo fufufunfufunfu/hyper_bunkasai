@@ -1,0 +1,232 @@
+#btnWrapper {
+    animation: disp 0.3s linear forwards 1;
+}
+
+@keyframes disp {
+    0% {
+        width: calc(28% + 0.4vh);
+        opacity: 0.0;
+    }
+
+    100% {
+        width: calc(30% + 0.4vh);
+        opacity: 1.0;
+    }
+}
+
+#btnWrapper>#btnBg {
+    animation: dispBg 0.3s linear forwards 1;
+}
+
+@keyframes dispBg {
+    0% {
+        width: 120%;
+        opacity: 0.0;
+    }
+
+    100% {
+        width: 150%;
+        opacity: 1.0;
+    }
+}
+
+:root {
+    --fade_delay: .5s;
+    --ink_load_diff: 6%;
+}
+
+#loadWrapper {
+    z-index: 1000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+#loadContent {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 45%;
+    left: 50%;
+    --ink_wrapper_width: 30%;
+    width: var(--ink_wrapper_width);
+}
+
+#loadAnimation {
+    overflow: hidden;
+    mask-image: url(../img/btn/btn_camera.svg);
+    -webkit-mask-image: url(../img/btn/btn_camera.svg);
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    mask-position: center;
+    -webkit-mask-position: center;
+    mask-size: 100%;
+    -webkit-mask-size: 100%;
+    width: 100%;
+    --anim_length_time: 2.4s;
+    animation: anim_ink_wrapper var(--anim_length_time) ease-in infinite;
+}
+
+@keyframes anim_ink_wrapper {
+
+    0%,
+    80% {
+        display: block;
+        opacity: 1.0;
+    }
+
+    90% {
+        opacity: .0;
+    }
+
+    100% {
+        opacity: .0;
+    }
+}
+
+#loadContent p {
+    display: block;
+    font-size: 1.3rem;
+    letter-spacing: 0.4rem;
+    line-height: .2rem;
+    color: rgba(255, 255, 255, 0.0);
+}
+
+#loadContent p::after {
+    content: '';
+    position: absolute;
+    transform: translate(-50%, 100%);
+    left: 50.0%;
+    bottom: -1.2rem;
+    display: block;
+    width: 85%;
+    padding-top: 15%;
+    color: #fff;
+    background-image: url(../img/loading/text/load_text02.svg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#loadAnimation::before {
+    display: block;
+    content: '';
+    /* 74*98 = 3:4  */
+    padding-top: 75%;
+}
+
+
+.inkLoad {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    animation: ease-in var(--anim_length_time) infinite;
+    animation-direction: normal;
+    opacity: 0.0;
+}
+
+.inkLoad._w01 {
+    --ink_w01_width: 74%;
+    width: var(--ink_w01_width);
+    --ink_w01_top: 78%;
+    top: var(--ink_w01_top);
+    --ink_w01_left: 24%;
+    left: var(--ink_w01_left);
+    animation-name: anim_ink_w01;
+    /* animation-delay: calc(var(--fade_delay) + .0s); */
+    /* opacity: 1; */
+}
+
+@keyframes anim_ink_w01 {
+
+    0% {
+        width: calc(var(--ink_w01_width) - var(--ink_load_diff));
+        opacity: .0;
+    }
+
+    10%,
+    100% {
+        width: var(--ink_w01_width);
+        opacity: 1.0;
+    }
+}
+
+.inkLoad._w02 {
+    --ink_w02_width: 72%;
+    width: var(--ink_w02_width);
+    --ink_w02_top: 24%;
+    top: var(--ink_w02_top);
+    --ink_w02_left: 68%;
+    left: var(--ink_w02_left);
+    animation-name: anim_ink_w02;
+    /* animation-delay: calc(var(--fade_delay) + .1s); */
+    /* opacity: 1; */
+}
+
+@keyframes anim_ink_w02 {
+
+    0%,
+    10% {
+        width: calc(var(--ink_w02_width) - var(--ink_load_diff));
+        opacity: .0;
+    }
+
+    20%,
+    100% {
+        width: var(--ink_w02_width);
+        opacity: 1.0;
+    }
+}
+
+.inkLoad._w03 {
+    --ink_w03_width: 58%;
+    width: var(--ink_w03_width);
+    --ink_w03_top: 40%;
+    top: var(--ink_w03_top);
+    --ink_w03_left: 24%;
+    left: var(--ink_w03_left);
+    animation-name: anim_ink_w03;
+    /* animation-delay: calc(var(--fade_delay) + .4s); */
+    /* opacity: 1; */
+}
+
+@keyframes anim_ink_w03 {
+
+    0%,
+    30% {
+        width: calc(var(--ink_w03_width) - var(--ink_load_diff));
+        opacity: .0;
+    }
+
+    40%,
+    100% {
+        width: var(--ink_w03_width);
+        opacity: 1.0;
+    }
+}
+
+.inkLoad._w04 {
+    --ink_w04_width: 68%;
+    width: var(--ink_w04_width);
+    --ink_w04_top: 80%;
+    top: var(--ink_w04_top);
+    --ink_w04_left: 74%;
+    left: var(--ink_w04_left);
+    animation-name: anim_ink_w04;
+    /* animation-delay: calc(var(--fade_delay) + .0s); */
+    /* opacity: 1; */
+}
+
+@keyframes anim_ink_w04 {
+
+    0%,
+    20% {
+        width: calc(var(--ink_w04_width) - var(--ink_load_diff));
+        opacity: .0;
+    }
+
+    30%,
+    100% {
+        width: var(--ink_w04_width);
+        opacity: 1.0;
+    }
+}

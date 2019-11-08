@@ -83,10 +83,49 @@ $('#uploadBtn').change(function () {
     }, 500);
 });
 
+$('#submitInput').on('click', function () {
+    $('#loadWrapper').css({
+        'display': 'block',
+        'opacity': '1.0'
+    });
+    $('#uploadImgFrame, ._fade').css({
+        'animation-play-state': 'paused'
+    });
+    setTimeout(function () {
+        $('#loadWrapper, #submitBtn').css({
+            'display': 'none'
+        });
+        $('#closeBtn').css({
+            'display': 'block'
+        });
+        $('#uploadView').css({
+            'background-color': '#88A80D'
+        });
+        $('#uploadImgFrame, ._fade').css({
+            'animation-play-state': 'running'
+        });
+        $('#uploadView').find('span._01').text('アップロードが');
+        $('#uploadView').find('span._02').text('完了しました。');
+    }, 5000);
 
-$('.cancelInput').on('click', function () {
+    console.log('submitInput on clicked.');
+});
+
+
+$('.closeInput').on('click', function () {
     $('#viewWrapper').css({
         'display': 'none',
         'opacity': '0.0'
     });
+    $('#uploadView').css({
+        'background-color': '#e5328c'
+    });
+    $('#submitBtn').css({
+        'display': 'block'
+    });
+    $('#closeBtn').css({
+        'display': 'none'
+    });
+    $('#uploadView').find('span._01').text('この画像を');
+    $('#uploadView').find('span._02').text('アップロードしますか？');
 });

@@ -1,14 +1,3 @@
-/* #viewWrapper {
-    display: block;
-    opacity: 1.0;
-}
-
-#uploadImgFrame,
-#uploadImg {
-    width: auto;
-    height: 100%;
-} */
-
 :root {
     --grad01: #fff;
     --grad02: #000;

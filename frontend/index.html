@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css/image-fade.css">
     <link rel="stylesheet" href="css/ink-property.css">
     <link rel="stylesheet" href="css/ink-animation.css">
+    <link rel="stylesheet" href="css/load-animation.css">
     <script>
         (function (d) {
             var config = {
@@ -46,95 +47,109 @@
 </head>
 
 <body>
-    <div id="inkWrapper" class="_height">
-        <!-- ink_l -->
-        <img src="img/ink/ink_l06.svg" class="ink _01">
-        <img src="img/ink/ink_s08.svg" class="ink _02">
-        <img src="img/ink/ink_l05.svg" class="ink _03">
-        <img src="img/ink/ink_l04.svg" class="ink _04">
-        <img src="img/ink/ink_l03.svg" class="ink _05">
-        <img src="img/ink/ink_l02.svg" class="ink _06">
-        <img src="img/ink/ink_l01.svg" class="ink _07">
-        <!-- ink_s -->
-        <img src="img/ink/ink_s01.svg" class="ink _08">
-        <img src="img/ink/ink_s02.svg" class="ink _09">
-        <img src="img/ink/ink_s03.svg" class="ink _10">
-        <img src="img/ink/ink_s04.svg" class="ink _11">
-        <img src="img/ink/ink_s05.svg" class="ink _12">
-        <img src="img/ink/ink_s06.svg" class="ink _13">
-        <img src="img/ink/ink_s07.svg" class="ink _14">
-        <img src="img/ink/ink_s09.svg" class="ink _15">
-        <img src="img/ink/ink_s10.svg" class="ink _16">
-        <img src="img/ink/ink_s11.svg" class="ink _17">
-        <img src="img/ink/ink_s12.svg" class="ink _18">
-        <img src="img/ink/ink_s13.svg" class="ink _19">
+    <div id="loadWrapper" class="_wrap">
+        <div id="loadContent">
+            <div id="loadAnimation">
+                <img src="img/loading/ink/ink_w01.svg" class="inkLoad _w01">
+                <img src="img/loading/ink/ink_w02.svg" class="inkLoad _w02">
+                <img src="img/loading/ink/ink_w03.svg" class="inkLoad _w03">
+                <img src="img/loading/ink/ink_w04.svg" class="inkLoad _w04">
+            </div>
+            <p>LOADING...</p>
+        </div>
     </div>
-    <div id="inkBlockWrapper" class="_height"></div>
-
-    <div id="wrapper" class="_height">
-        <div id="logoTop" class="logoMain">
-            <img src="img/logo_top01.svg" id="logoTopImg" alt="">
+    <div id="wrapper" class="_hide _wrap">
+        <div id="inkWrapper" class="_wrap">
+            <!-- ink_l -->
+            <img src="img/ink/ink_l06.svg" class="ink _01">
+            <img src="img/ink/ink_s08.svg" class="ink _02">
+            <img src="img/ink/ink_l05.svg" class="ink _03">
+            <img src="img/ink/ink_l04.svg" class="ink _04">
+            <img src="img/ink/ink_l03.svg" class="ink _05">
+            <img src="img/ink/ink_l02.svg" class="ink _06">
+            <img src="img/ink/ink_l01.svg" class="ink _07">
+            <!-- ink_s -->
+            <img src="img/ink/ink_s01.svg" class="ink _08">
+            <img src="img/ink/ink_s02.svg" class="ink _09">
+            <img src="img/ink/ink_s03.svg" class="ink _10">
+            <img src="img/ink/ink_s04.svg" class="ink _11">
+            <img src="img/ink/ink_s05.svg" class="ink _12">
+            <img src="img/ink/ink_s06.svg" class="ink _13">
+            <img src="img/ink/ink_s07.svg" class="ink _14">
+            <img src="img/ink/ink_s09.svg" class="ink _15">
+            <img src="img/ink/ink_s10.svg" class="ink _16">
+            <img src="img/ink/ink_s11.svg" class="ink _17">
+            <img src="img/ink/ink_s12.svg" class="ink _18">
+            <img src="img/ink/ink_s13.svg" class="ink _19">
         </div>
+        <div id="inkBlockWrapper" class="_wrap"></div>
 
-        <form action="upload_sample.php" method="post">
-            <input accept="image/*" type="file" name="upfile" size="30" value="" id="uploadBtn" />
+        <div id="ContentWrapper" class="_wrap">
+            <div id="logoTop" class="logoMain">
+                <img src="img/logo/logo_top.svg" id="logoTopImg" alt="">
+            </div>
 
-            <label for="uploadBtn" id="btnWrapper">
-                <img src="img/btn_bg01.svg" id="btnBg" alt="">
-                <img src="img/btn_text01.svg" id="btnText" alt="">
-                <img src="img/btn_arrows01.svg" id="btnArrows" alt="">
-                <img src="img/btn_camera01.svg" id="btnCamera" alt="">
-            </label>
-        </form>
+            <form action="upload_sample.php" method="post">
+                <input accept="image/*" type="file" name="upfile" size="30" value="" id="uploadBtn" />
 
-        <div id="logoBottom" class="logoMain">
-            <img src="img/logo_bottom01.svg" id="logoBottomImg" alt="">
-        </div>
-
-        <div id="viewWrapper">
-            <div id="uploadView">
-                <label for="cancel" id="cancelIcon" class="cancelInput">
-                    <div class="cancelCross _01"></div>
-                    <div class="cancelCross _02"></div>
+                <label for="uploadBtn" id="btnWrapper">
+                    <img src="img/btn/btn_bg.svg" id="btnBg" alt="">
+                    <img src="img/btn/btn_text.svg" id="btnText" alt="">
+                    <img src="img/btn/btn_arrows.svg" id="btnArrows" alt="">
+                    <img src="img/btn/btn_camera.svg" id="btnCamera" alt="">
                 </label>
-                <div id="uploadImgCont">
-                    <div id="uploadImgFrame">
-                        <img id="uploadImg" src="">
-                        <!-- <img id="uploadImg" src="img/sample.jpg"> -->
-                        <div id="fadeWrapper" class="_c01">
-                            <div id="fadeCont">
-                                <div id="_01" class="_fade"></div>
-                                <div id="_02" class="_fade"></div>
-                                <div id="_03" class="_fade"></div>
-                                <div id="_04" class="_fade"></div>
-                                <div id="_05" class="_fade"></div>
+            </form>
+
+            <div id="logoBottom" class="logoMain">
+                <img src="img/logo/logo_bottom.svg" id="logoBottomImg" alt="">
+            </div>
+
+            <div id="viewWrapper">
+                <div id="uploadView">
+                    <label for="cancel" id="cancelIcon" class="closeInput">
+                        <div class="cancelCross _01"></div>
+                        <div class="cancelCross _02"></div>
+                    </label>
+                    <div id="uploadImgCont">
+                        <div id="uploadImgFrame">
+                            <img id="uploadImg" src="">
+                            <!-- <img id="uploadImg" src="img/sample.jpg"> -->
+                            <div id="fadeWrapper" class="_c01">
+                                <div id="fadeCont">
+                                    <div id="_01" class="_fade"></div>
+                                    <div id="_02" class="_fade"></div>
+                                    <div id="_03" class="_fade"></div>
+                                    <div id="_04" class="_fade"></div>
+                                    <div id="_05" class="_fade"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div id="uploadLine" class="sectionLine"></div>
-                <p><span>この画像を</span><span>アップロードしますか？</span></p>
-                <input type="submit" name="save" value="UPLOAD" id="submitInput" />
-                <div id="submitWrapper">
-                    <label for="submitInput" id="submitBtn">UPLOAD</label>
-                    <label for="cancel" id="cancelBtn" class="cancelInput">CANCEL</label>
+                    <div id="uploadLine" class="sectionLine"></div>
+                    <p><span class="_01">この画像を</span><span class="_02">アップロードしますか？</span></p>
+                    <input type="submit" name="save" value="UPLOAD" id="submitInput" />
+                    <div id="submitWrapper">
+                        <label for="submitInput" id="submitBtn">UPLOAD</label>
+                        <label for="cancel" id="closeBtn" class="closeInput">CLOSE</label>
+                    </div>
                 </div>
             </div>
-        </div>
 
+        </div>
     </div>
 
     <script type="text/javascript" src="js/upload_proc.js"></script>
+    <script type="text/javascript" src="js/load_proc.js"></script>
 
     <script>
         // スマートフォンで全画面表示
         $(document).ready(function () {
             var hSize = $(window).height();
-            $('._height').height(hSize); // アドレスバーを除いたサイズを付与
+            $('._wrap').height(hSize); // アドレスバーを除いたサイズを付与
         });
         $(window).resize(function () { // ページをリサイズした時の処理
             var hSize = $(window).height();
-            $('._height').height(hSize); // アドレスバーを除いたサイズを付与
+            $('._wrap').height(hSize); // アドレスバーを除いたサイズを付与
         });
     </script>
 

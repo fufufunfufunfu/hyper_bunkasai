@@ -13,8 +13,7 @@ html {
 }
 
 body {
-    background-color: #000;
-    background-image: url(../img/bg03.png);
+    background-image: url(../img/bg/bg_load.png);
     background-size: 38%;
     background-repeat: repeat;
     /* TBカリグラゴシック Std */
@@ -25,14 +24,28 @@ body {
     padding: 0;
 }
 
-._height {
+._hide {
+    display: none;
+    opacity: 0.0;
+}
+
+._wrap {
+    width: 100vw;
     height: 100vh;
 }
 
 #wrapper {
+    background-image: url(../img/bg/bg_base.png);
+    background-size: 38%;
+    background-repeat: repeat;
     overflow-x: hidden;
     position: relative;
-    width: 100vw;
+    transition: .3s;
+}
+
+#ContentWrapper {
+    position: relative;
+    width: 100%;
 }
 
 .logoMain {
@@ -140,25 +153,22 @@ body {
     left: 50%;
     margin: auto;
     width: calc(100% - 4.0rem);
-    background-color: rgba(255, 105, 180, 1.0);
-    background-color: rgba(229, 50, 140, 1.0);
     background-color: #e5328c;
     border-radius: 0.8rem;
+    transition: .3s;
 }
 
 #uploadView #cancelIcon {
     position: absolute;
     transform: translate(0%, 0%);
     top: -2.4rem;
-    right: .0rem;
-    right: .0rem;
+    right: .8rem;
     width: 5.0rem;
     height: 5.0rem;
     border-radius: 50%;
+    background-color: #fff;
     background-color: #e5328c;
-    background-color: #88A80D;
-    background: #fff;
-    /* box-shadow: 0 2px 5px rgba(229, 50, 140, 0.3); */
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
 }
 
 #cancelIcon .cancelCross {
@@ -167,8 +177,7 @@ body {
     left: 50%;
     width: 50%;
     height: 4px;
-    background: #fff;
-    background: #e5328c;
+    background-color: #fff;
     border-radius: 2px;
 }
 
@@ -183,7 +192,7 @@ body {
 
 #uploadView p {
     font-size: 2.1rem;
-    line-height: 3.6rem;
+    line-height: 2.4rem;
 }
 
 #uploadImgCont {
@@ -283,7 +292,6 @@ body {
     /* background-color: #fff; */
     /* color: #e5328c; */
     margin-top: .4rem;
-    padding: 0 .4rem;
 }
 
 #uploadView span:nth-child(1) {
@@ -308,16 +316,16 @@ body {
 
 #submitWrapper #submitBtn {
     order: 2;
-    width: 60%;
     width: 100%;
-    background: #fff;
+    background-color: #88A80D;
     color: #E5328C;
+    color: #fff;
 }
 
-#submitWrapper #cancelBtn {
-    display: none;
+#submitWrapper #closeBtn {
     order: 1;
-    width: 40%;
-    background: #88A80D;
+    width: 100%;
+    background-color: #E5328C;
     color: #fff;
+    display: none;
 }
