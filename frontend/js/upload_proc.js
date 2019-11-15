@@ -1,8 +1,12 @@
+const params = new FormData()
+let file
+
 $('#uploadBtn').change(function () {
     // fileの読み出し
     if (this.files.length > 0) {
         // 選択されたファイル情報を取得
         file = this.files[0];
+        params.set('photo', file)
 
         // readerのresultプロパティに、データURLとしてエンコードされたファイルデータを格納
         var reader = new FileReader();
@@ -91,7 +95,14 @@ $('#submitInput').on('click', function () {
     $('#uploadImgFrame, ._fade').css({
         'animation-play-state': 'paused'
     });
-    setTimeout(function () {
+
+    // upload function
+    axios.post('http://localhost:3000/photo', params, {
+        header: {
+            'content-type': 'multipart/form-data'
+        }
+    }).then(res => {
+        window.console.log(res)
         $('#loadWrapper, #submitBtn').css({
             'display': 'none'
         });
@@ -106,7 +117,24 @@ $('#submitInput').on('click', function () {
         });
         $('#uploadView').find('span._01').text('アップロードが');
         $('#uploadView').find('span._02').text('完了しました。');
-    }, 5000);
+    })
+
+    // setTimeout(function () {
+    //     $('#loadWrapper, #submitBtn').css({
+    //         'display': 'none'
+    //     });
+    //     $('#closeBtn').css({
+    //         'display': 'block'
+    //     });
+    //     $('#uploadView').css({
+    //         'background-color': '#88A80D'
+    //     });
+    //     $('#uploadImgFrame, ._fade').css({
+    //         'animation-play-state': 'running'
+    //     });
+    //     $('#uploadView').find('span._01').text('アップロードが');
+    //     $('#uploadView').find('span._02').text('完了しました。');
+    // }, 5000);
 
     console.log('submitInput on clicked.');
 });

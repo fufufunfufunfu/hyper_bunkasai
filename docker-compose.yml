@@ -7,8 +7,14 @@ services:
       - 80:80
     volumes:
       - ./frontend:/var/www/html
-  node:
-    container_name: backend
-    build: ./backend
+  websocket:
+    container_name: backend_websocket
+    build: ./backend_websocket
     ports:
-      - 3000:8080
+      - 8080:8080
+  api:
+    container_name: backend_api
+    build: ./backend_api
+    ports:
+      - 3000:3000
+  
