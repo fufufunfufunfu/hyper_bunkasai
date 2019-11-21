@@ -46,7 +46,8 @@ const s3 = new AWS.S3({ apiVersion: "2006-03-01" });
 const uploadParams = {
   Bucket: process.env.S3_BUCKET_NAME,
   Key: "",
-  Body: ""
+  Body: "",
+  ContentType: ""
 };
 
 // start API server
@@ -71,6 +72,7 @@ app.post("/photo", uploadDir.single("photo"), function(req, res, next) {
     console.log("Error", err);
   });
   uploadParams.Body = fileStream;
+  uploadParams.ContentType = req.file.mimetype;
   console.log(req.file);
   uploadParams.Key = `pre/${req.file.filename}`;
   s3.upload(uploadParams, (err, data) => {
